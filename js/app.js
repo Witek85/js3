@@ -5,13 +5,12 @@ import 'waypoints';
 import 'scrollTo';
 
 
-function this1() {
-console.log( this.a );
-document.querySelector("#this1 .container").innerHTML += "<br/>" + this.a;
-}
 var object1 = {
-a: 2,
-doThis1: this1
+a: 3,
+doThis1: function() {
+    console.log( this.a );
+    document.querySelector("#this1 .container").innerHTML += "<br/>" + this.a;
+}
 };
 object1.doThis1(); // 2
 
