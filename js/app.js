@@ -4,9 +4,17 @@ import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import 'waypoints';
 import 'scrollTo';
 
-/**
- * EXAMPLE JS STARTS
- */
+
+function this1() {
+console.log( this.a );
+document.querySelector("#this1 .container").innerHTML += "<br/>" + this.a;
+}
+var object1 = {
+a: 2,
+doThis1: this1
+};
+object1.doThis1(); // 2
+
 $(function() {
     $('[id^=scrollTo]').click(function() {
         var id = $(this).attr('id').slice(9);
@@ -27,6 +35,3 @@ $(function() {
         triggerOnce: true
     });
 });
-/**
- * EXAMPLE JS ENDS
- */
