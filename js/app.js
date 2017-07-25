@@ -14,6 +14,14 @@ doThis1: function() {
 };
 object1.doThis1(); // 2
 
+// array is an object!
+
+var myArray = [ "foo", 42, "bar" ];
+myArray.baz = "baz";
+myArray.length; // 3
+myArray.baz; // "baz"
+console.log(myArray);
+
 $(function() {
     $('[id^=scrollTo]').click(function() {
         var id = $(this).attr('id').slice(9);
