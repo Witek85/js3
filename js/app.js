@@ -34,6 +34,15 @@ writable: true,
 configurable: true,
 enumerable: true
 } );
+
+// creating a constant
+
+Object.defineProperty( myObject, "constant", {
+value: 10000,
+writable: false,
+configurable: false
+} );
+
 console.log(myObject); // 2
 
 
