@@ -22,6 +22,21 @@ myArray.length; // 3
 myArray.baz; // "baz"
 console.log(myArray);
 
+// object defineProperty
+
+var myObject = {
+    b: 10,
+    c: 20
+};
+Object.defineProperty( myObject, "a", {
+value: 2,
+writable: true,
+configurable: true,
+enumerable: true
+} );
+console.log(myObject); // 2
+
+
 $(function() {
     $('[id^=scrollTo]').click(function() {
         var id = $(this).attr('id').slice(9);
