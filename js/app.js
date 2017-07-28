@@ -45,6 +45,21 @@ configurable: false
 
 console.log(myObject); // 2
 
+// class - prototype
+
+function Car(name) {
+    this.name = name;
+}
+
+Car.prototype.getName = function() {
+    return this.name;
+}
+
+var audi = new Car('Audi');
+var nissan = new Car('Nissan');
+
+document.querySelector("#prototype1 .container").innerHTML += "<br/>" + audi.getName();
+document.querySelector("#prototype1 .container").innerHTML += "<br/>" + nissan.getName();
 
 $(function() {
     $('[id^=scrollTo]').click(function() {
