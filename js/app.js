@@ -78,18 +78,22 @@ document.querySelector("#prototype1 .container").innerHTML += "<br/>" + scania.g
 
 // object delegation
 var Task = {
-setID: function(ID) { this.id = ID; },
-outputID: function() { console.log( "id: " + this.id ); }
+    setID: function(ID) { 
+        this.id = ID; 
+    },
+    outputID: function() { 
+        document.querySelector("#delegate1 .container").innerHTML += "<br/>" + "id: " + this.id;
+    }
 };
 // make `XYZ` delegate to `Task`
 var XYZ = Object.create( Task );
 XYZ.prepareTask = function(ID,Label) {
-this.setID( ID );
-this.label = Label;
+    this.setID( ID );
+    this.label = Label;
 };
 XYZ.outputTaskDetails = function() {
-this.outputID();
-console.log( "label: " + this.label );
+    this.outputID();
+    document.querySelector("#delegate1 .container").innerHTML += "<br/>" + "label: " + this.label;
 };
 
 XYZ.prepareTask(123,'label')
