@@ -99,6 +99,31 @@ XYZ.outputTaskDetails = function() {
 XYZ.prepareTask(123,'label')
 XYZ.outputTaskDetails();
 
+// object delegation 2
+
+var Person = function(name) {
+    this.name = name;
+}
+
+Person.prototype.identify = function() {
+    return "I am " + this.name;
+}
+
+function Man(name) {
+    Person.call(this, name);
+}
+Man.prototype = Object.create(Person.prototype);
+
+Man.prototype.speak = function() {
+    document.querySelector("#delegate2 .container").innerHTML += "<br/>" + "Hello " + this.identify() + "!";
+}
+
+var Mark = new Man("Mark");
+var John = new Man("John");
+
+Mark.speak();
+John.speak();
+
 $(function() {
     $('[id^=scrollTo]').click(function() {
         var id = $(this).attr('id').slice(9);
