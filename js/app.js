@@ -124,6 +124,34 @@ var John = new Man("John");
 Mark.speak();
 John.speak();
 
+// object delegation 2 - another method
+
+var Person2 = {
+    init: function(name) {
+        this.name = name;
+    },
+    identify: function() {
+        return "I am " + this.name;
+    }
+}
+
+var Man2 = Object.create(Person2);
+
+Man2.speak = function() {
+    document.querySelector("#delegate2 .container").innerHTML += "<br/>" + "Hello " + this.identify() + "!";
+}
+
+var Jason = Object.create(Man2);
+var James = Object.create(Man2);
+
+Jason.init("Jason");
+James.init("James");
+
+Jason.speak();
+James.speak();
+
+// ---
+
 $(function() {
     $('[id^=scrollTo]').click(function() {
         var id = $(this).attr('id').slice(9);
