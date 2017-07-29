@@ -76,6 +76,25 @@ document.querySelector("#prototype1 .container").innerHTML += "<br/>" + audi.get
 document.querySelector("#prototype1 .container").innerHTML += "<br/>" + nissan.getName();
 document.querySelector("#prototype1 .container").innerHTML += "<br/>" + scania.getName() + scania.getCapacity();
 
+// object delegation
+var Task = {
+setID: function(ID) { this.id = ID; },
+outputID: function() { console.log( "id: " + this.id ); }
+};
+// make `XYZ` delegate to `Task`
+var XYZ = Object.create( Task );
+XYZ.prepareTask = function(ID,Label) {
+this.setID( ID );
+this.label = Label;
+};
+XYZ.outputTaskDetails = function() {
+this.outputID();
+console.log( "label: " + this.label );
+};
+
+XYZ.prepareTask(123,'label')
+XYZ.outputTaskDetails();
+
 $(function() {
     $('[id^=scrollTo]').click(function() {
         var id = $(this).attr('id').slice(9);
