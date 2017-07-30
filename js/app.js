@@ -152,6 +152,46 @@ James.speak();
 
 // ---
 
+// Parent class
+function Widget(width,height) {
+    this.width = width || 50;
+    this.height = height || 50;
+    this.$elem = null;
+}
+
+Widget.prototype.render = function(element){
+    if (this.$elem) {
+        this.$elem.css( {
+            width: this.width + "px",
+            height: this.height + "px"
+        } ).appendTo( element );
+    }
+};
+// Child class
+function Button(width,height,label) {
+    // "super" constructor call
+    Widget.call( this, width, height );
+    this.label = label || "Default";
+    this.$elem = $( "<button class='btn btn-default'>" ).text( this.label );
+}
+// make `Button` "inherit" from `Widget`
+Button.prototype = Object.create( Widget.prototype );
+
+// override base "inherited" `render(..)`
+Button.prototype.render = function(element) {
+    // "super" call
+    Widget.prototype.render.call( this, element );
+    this.$elem.click( this.onClick.bind( this ) );
+};
+Button.prototype.onClick = function(evt) {
+    console.log( "Button '" + this.label + "' clicked!" );
+};
+
+// var $body = $( document.body );
+var buttons1 = document.querySelector("#buttons1 .container");
+
+
+
 $(function() {
     $('[id^=scrollTo]').click(function() {
         var id = $(this).attr('id').slice(9);
@@ -171,4 +211,9 @@ $(function() {
         offset: '50%',
         triggerOnce: true
     });
+
+    var btn1 = new Button( 125, 30, "Hello" );
+    var btn2 = new Button( 150, 40, "World" );
+    btn1.render( buttons1 );
+    btn2.render( buttons1 );
 });
