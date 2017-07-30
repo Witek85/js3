@@ -187,6 +187,25 @@ Button.prototype.onClick = function(evt) {
     console.log( "Button '" + this.label + "' clicked!" );
 };
 
+function Box(width,height,color,border) {
+    Widget.call( this, width, height );
+    this.color = color || "white";
+    this.border = border || "1px solid black";
+    this.$elem = $( "<div>" );
+}
+Box.prototype = Object.create( Widget.prototype );
+
+Box.prototype.render = function(element) {
+    Widget.prototype.render.call( this, element );
+
+    if (this.$elem) {
+        this.$elem.css( {
+            background: this.color,
+            border: this.border
+        } ).appendTo( element );
+    }
+};
+
 // var $body = $( document.body );
 var buttons1 = document.querySelector("#buttons1 .container");
 
@@ -214,6 +233,13 @@ $(function() {
 
     var btn1 = new Button( 125, 30, "Hello" );
     var btn2 = new Button( 150, 40, "World" );
+    var btn3 = new Button( 250, 30);
     btn1.render( buttons1 );
     btn2.render( buttons1 );
+    btn3.render( buttons1 );
+
+    var box1 = new Box( 50, 50, "red", "2px solid blue");
+    var box2 = new Box( 150, 75);
+    box1.render( buttons1 );
+    box2.render( buttons1 );
 });
