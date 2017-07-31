@@ -206,8 +206,42 @@ Box.prototype.render = function(element) {
     }
 };
 
-// var $body = $( document.body );
 var buttons1 = document.querySelector("#buttons1 .container");
+
+// same different way
+
+class Widget2 {
+    constructor(width, height) {
+        this.width = width || 50;
+        this.height = height || 50;
+        this.$elem = null;
+    }
+    render(element){
+        if (this.$elem) {
+            this.$elem.css( {
+                width: this.width + "px",
+                height: this.height + "px"
+            } ).appendTo( element );
+        }   
+    }
+}
+
+class Button2 extends Widget2 {
+    constructor(width,height,label) {
+        super( width, height );
+        this.label = label || "Default";
+        this.$elem = $( "<button class='btn btn-default'>" ).text( this.label );
+    }
+    render(element) {
+        super.render(element);
+        this.$elem.click( this.onClick.bind( this ) );
+    }
+    onClick(evt) {
+        console.log( "Button '" + this.label + "' clicked!" );
+    }
+}
+
+var buttons2 = document.querySelector("#buttons2 .container");
 
 
 
@@ -242,4 +276,11 @@ $(function() {
     var box2 = new Box( 150, 75);
     box1.render( buttons1 );
     box2.render( buttons1 );
+
+    var btn4 = new Button2( 125, 30, "Hello" );
+    var btn5 = new Button2( 150, 40, "World" );
+    var btn6 = new Button2( 250, 30);
+    btn4.render( buttons2 );
+    btn5.render( buttons2 );
+    btn6.render( buttons2 );
 });
