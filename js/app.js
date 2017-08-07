@@ -244,6 +244,24 @@ class Button2 extends Widget2 {
 var buttons2 = document.querySelector("#buttons2 .container");
 
 
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() + 1;
+var rrrr = today.getFullYear();
+
+if (dd < 10) {
+    dd = "0" + dd;
+}
+
+if (mm < 10) {
+    mm = "0" + mm;
+}
+
+var date1 = document.querySelector("#date1 .container");
+date1.innerHTML += "<br/>" + dd + "/" + mm + "/" + rrrr;
+
+
+
 
 $(function() {
     $('[id^=scrollTo]').click(function() {
