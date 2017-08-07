@@ -243,22 +243,41 @@ class Button2 extends Widget2 {
 
 var buttons2 = document.querySelector("#buttons2 .container");
 
+class Date1 {
+    constructor() {
 
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth() + 1;
-var rrrr = today.getFullYear();
+        var today = new Date ();
+        this.dd = today.getDate();
+        this.mm = today.getMonth() + 1;
+        this.rrrr = today.getFullYear();
 
-if (dd < 10) {
-    dd = "0" + dd;
+        this.addZero();
+
+    }
+    addZero() {
+        if (this.dd < 10) {
+            this.dd = "0" + this.dd;
+        }
+
+        if (this.mm < 10) {
+            this.mm = "0" + this.mm;
+        }
+    }
+    render(element) {
+        element.innerHTML += "<br/>" + this.dd + "/" + this.mm + "/" + this.rrrr;
+    }
 }
 
-if (mm < 10) {
-    mm = "0" + mm;
-}
+// var dd = today.getDate();
+// var mm = today.getMonth() + 1;
+// var rrrr = today.getFullYear();
+
+var dat1 = new Date1( );
 
 var date1 = document.querySelector("#date1 .container");
-date1.innerHTML += "<br/>" + dd + "/" + mm + "/" + rrrr;
+dat1.render(date1);
+dat1.render(date1);
+
 
 
 
