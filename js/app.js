@@ -280,6 +280,30 @@ var date1 = document.querySelector("#date1 .container");
 dat1.render(date1);
 dat2.render(date1);
 
+// ajax 1
+
+function useAjax(url) {
+
+    var query;
+    query = new XMLHttpRequest();
+    query.onreadystatechange = function() {
+        if(query.readyState === 4 && query.status === 200) {
+
+            var arr = JSON.parse(this.responseText);
+            var output = "";
+
+            for(var i = 0; i < arr.length; i++) {
+                output += arr[i].name + '<br>';
+            }
+            document.querySelector("#ajax1 .container").innerHTML += "<br/>" + output;
+
+        }
+    }
+
+    query.open("GET", url, true);
+    query.send();
+} 
+
 
 
 
@@ -321,4 +345,6 @@ $(function() {
     btn4.render( buttons2 );
     btn5.render( buttons2 );
     btn6.render( buttons2 );
+
+    useAjax("http://jsonplaceholder.typicode.com/users/");
 });
