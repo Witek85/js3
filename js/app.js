@@ -295,6 +295,20 @@ dat2.render(date1);
 dat1.checkSunday()
 dat2.checkSunday()
 
+class Number1 {
+    constructor(num) {
+        this.num = num;
+    }
+    render(element) {
+        element.innerHTML += "<br/>" + this.num;
+    }
+}
+
+var num1 = new Number1( 19 );
+var numb1 = document.querySelector("#number1 .container");
+num1.render(numb1);
+
+
 // ajax 1
 
 function useAjax(url) {
