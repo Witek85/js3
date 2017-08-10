@@ -269,6 +269,19 @@ class Date1 {
             this.mm = "0" + this.mm;
         }
     }
+    checkSunday() {
+
+        var today = new Date ();
+        var thisYear = today.getFullYear();  
+        console.log("Starting from " + this.rrrr);  
+
+        for (var year = this.rrrr; year <= thisYear; year++)
+        {
+            var d = new Date(year, 0, 1);
+            if ( d.getDay() === 1 )
+                console.log("1st January is being a Monday  "+year);
+        }
+    }
     render(element) {
         element.innerHTML += "<br/>" + this.dd + "/" + this.mm + "/" + this.rrrr;
     }
@@ -279,6 +292,8 @@ var dat2 = new Date1( 1,1,1980);
 var date1 = document.querySelector("#date1 .container");
 dat1.render(date1);
 dat2.render(date1);
+dat1.checkSunday()
+dat2.checkSunday()
 
 // ajax 1
 
