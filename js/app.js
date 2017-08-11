@@ -376,4 +376,26 @@ $(function() {
     btn6.render( buttons2 );
 
     useAjax("http://jsonplaceholder.typicode.com/users/");
+
+    var taskOne = $.ajax({ url: 'http://jsonplaceholder.typicode.com/todos/1' });
+
+    var taskTwo = $.ajax({ url: 'http://jsonplaceholder.typicode.com/todos/2' });
+
+    taskOne.done(function () {
+        console.log('PromiseOne Done');
+    });
+
+    taskTwo.done(function () {
+        console.log('PromiseTwo Done');
+    });
+
+    $.when(taskOne, taskTwo).done(function () {
+      console.log('taskOne and taskTwo are finished');
+    });
+
+  
+
+
+
+
 });
