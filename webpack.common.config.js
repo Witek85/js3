@@ -36,10 +36,14 @@ module.exports = {
             "window.jQuery": 'jquery',
             "windows.jQuery": 'jquery',
         })
-    ],
-    resolve: {
-        extensions: ['', '.js', '.css'],
-        alias: {
+        ],
+        resolve: {
+  root: [
+    path.resolve('./js')
+  ],
+
+          extensions: ['', '.js', '.css'],
+          alias: {
             "scrollTo": path.resolve(
                 __dirname,
                 "node_modules/jquery.scrollto/jquery.scrollTo.min"

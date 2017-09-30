@@ -4,14 +4,7 @@ import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import 'waypoints';
 import 'scrollTo';
 
-
-var object1 = {
-a: 3,
-doThis1: function() {
-    console.log( this.a );
-    document.querySelector("#this1 .container").innerHTML += "<br/>" + this.a;
-}
-};
+var object1 = require('this1');
 object1.doThis1(); // 2
 
 // array is an object!
@@ -304,7 +297,7 @@ class Number1 {
     }
 }
 
-var num1 = new Number1( 19 );
+var num1 = new Number1( 123 );
 var numb1 = document.querySelector("#number1 .container");
 num1.render(numb1);
 
