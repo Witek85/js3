@@ -5,7 +5,12 @@ import 'waypoints';
 import 'scrollTo';
 
 var object1 = require('this1');
+var cond1 = object1.a == 3 ? 'is 3' : 'is not 3';
 object1.doThis1(); // 2
+document.querySelector("#this1 .container").innerHTML += "<br/>" + cond1;
+
+// It has the form of: condition ? value-if-true : value-if-false
+// Think of the ? as "then" and : as "else".
 
 // array is an object!
 
