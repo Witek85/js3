@@ -45,24 +45,10 @@ console.log(myObject); // 2
 
 // --------------------
 
-import Car from 'car';
+import {Car, Truck} from 'car';
 
 var audi = new Car('Audi');
 var nissan = new Car('Nissan');
-
-function Truck(name,capacity) {
-Car.call( this, name );
-this.capacity = capacity;
-}
-
-Truck.prototype = Object.create( Car.prototype );
-// Beware! Now `Bar.prototype.constructor` is gone,
-// and might need to be manually "fixed" if you're
-// in the habit of relying on such properties!
-Truck.prototype.getCapacity = function() {
-return this.capacity;
-};
-
 var scania = new Truck( "Scania", 50000 );
 
 document.querySelector("#prototype1 .container").innerHTML += "<br/>" + audi.getName();
