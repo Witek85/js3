@@ -1,4 +1,4 @@
-class Number1 {
+export default class Number1 {
     constructor(num) {
         this.num = num;
     }
