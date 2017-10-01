@@ -43,15 +43,9 @@ configurable: false
 
 console.log(myObject); // 2
 
-// class - prototype
+// --------------------
 
-function Car(name) {
-    this.name = name;
-}
-
-Car.prototype.getName = function() {
-    return this.name;
-}
+import Car from 'car';
 
 var audi = new Car('Audi');
 var nissan = new Car('Nissan');
@@ -68,6 +62,7 @@ Truck.prototype = Object.create( Car.prototype );
 Truck.prototype.getCapacity = function() {
 return this.capacity;
 };
+
 var scania = new Truck( "Scania", 50000 );
 
 document.querySelector("#prototype1 .container").innerHTML += "<br/>" + audi.getName();
