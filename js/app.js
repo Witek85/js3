@@ -55,6 +55,15 @@ document.querySelector("#prototype1 .container").innerHTML += "<br/>" + audi.get
 document.querySelector("#prototype1 .container").innerHTML += "<br/>" + nissan.getName();
 document.querySelector("#prototype1 .container").innerHTML += "<br/>" + scania.getName() + scania.getCapacity();
 
+// recurencja silnia - recurrence factorial
+
+import {factorial1} from 'factorial1';
+
+document.querySelector("#factorial1 .container").innerHTML += "<br/>" + factorial1(0);
+document.querySelector("#factorial1 .container").innerHTML += "<br/>" + factorial1(6);
+document.querySelector("#factorial1 .container").innerHTML += "<br/>" + factorial1(16);
+
+
 // object delegation
 var Task = {
     setID: function(ID) { 
