@@ -15,3 +15,14 @@ export function gcd(a, b) {
 
 	return gcd(b, a % b);
 }
+
+export function range(a, b) {
+	if (b - a === 2) {
+		return [a + 1];
+	} 
+		
+		var list = range(a, b - 1);
+		list.push(b - 1);
+		return list;
+
+}

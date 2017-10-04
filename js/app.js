@@ -57,13 +57,18 @@ document.querySelector("#prototype1 .container").innerHTML += "<br/>" + scania.g
 
 // recurencja silnia - recurrence factorial
 
-import {factorial1, gcd} from 'recursive';
+import {factorial1, gcd, range} from 'recursive';
 
 document.querySelector("#recursive .container").innerHTML += "<br/>" + factorial1(0);
 document.querySelector("#recursive .container").innerHTML += "<br/>" + factorial1(6);
 document.querySelector("#recursive .container").innerHTML += "<br/>" + factorial1(16);
 // najwięszy wspólny dzielnik
 document.querySelector("#recursive .container").innerHTML += "<br/>" + gcd(16, 6);
+document.querySelector("#recursive .container").innerHTML += "<br/>" + gcd(42, 56);
+
+document.querySelector("#recursive .container").innerHTML += "<br/>" + range(1, 10);
+
+
 
 // https://www.w3resource.com/javascript-exercises/javascript-recursion-functions-exercises.php
 
