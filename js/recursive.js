@@ -26,3 +26,11 @@ export function range(a, b) {
 		return list;
 
 }
+
+export function sumArray(arr) {
+	if (arr.length === 1) {
+		return arr[0];
+	}
+
+	return arr.pop() + sumArray(arr);
+}
