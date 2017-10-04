@@ -5,10 +5,11 @@ export function factorial1(number) {
 	}
 
 	return number * factorial1(number - 1);
-    
+
 }
 
 export function gcd(a, b) {
+	// console.log(a, b);
 	if ( !b ) {
 		return a;
 	}
@@ -17,20 +18,22 @@ export function gcd(a, b) {
 }
 
 export function range(a, b) {
+	// console.log(a, b);
 	if (b - a === 2) {
 		return [a + 1];
 	} 
-		
-		var list = range(a, b - 1);
-		list.push(b - 1);
-		return list;
+
+	var list = range(a, b - 1);
+	list.push(b - 1);
+	return list;
 
 }
 
 export function sumArray(arr) {
+	// console.log(arr);
 	if (arr.length === 1) {
 		return arr[0];
 	}
 
-	return arr.pop() + sumArray(arr);
+	return arr.shift() + sumArray(arr);
 }
