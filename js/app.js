@@ -63,6 +63,7 @@ document.querySelector("#recursive .container").innerHTML += "<br/>" + factorial
 document.querySelector("#recursive .container").innerHTML += "<br/>" + factorial1(6);
 document.querySelector("#recursive .container").innerHTML += "<br/>" + factorial1(16);
 // najwięszy wspólny dzielnik
+// algorytm Euklidesa
 document.querySelector("#recursive .container").innerHTML += "<br/>" + gcd(16, 6);
 document.querySelector("#recursive .container").innerHTML += "<br/>" + gcd(42, 56);
 
