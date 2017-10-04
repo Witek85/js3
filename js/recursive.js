@@ -7,3 +7,11 @@ export function factorial1(number) {
 	return number * factorial1(number - 1);
     
 }
+
+export function gcd(a, b) {
+	if ( !b ) {
+		return a;
+	}
+
+	return gcd(b, a % b);
+}
