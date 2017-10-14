@@ -45,3 +45,31 @@ export function exponent(a,b) {
 		return a * exponent(a,b-1);
 	}
 }
+
+export function even_recursion(number) {
+  if (number < 0) {
+    number = Math.abs(number);
+  }
+  if (number===0) {
+    return true;
+  }
+  if (number===1) {
+    return false;
+  } else {
+    number = number - 2;
+    return even_recursion(number);
+  }
+}
+
+export function fibonacci(num) {
+
+	if (num === 1) {
+		return [0, 1];
+	} else {
+		var s = fibonacci(num-1);
+		// console.log(s);
+		s.push(s[s.length - 1] + s[s.length - 2]);
+		return s;
+	}
+
+}

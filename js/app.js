@@ -57,7 +57,7 @@ document.querySelector("#prototype1 .container").innerHTML += "<br/>" + scania.g
 
 // recurencja silnia - recurrence factorial
 
-import {factorial1, gcd, range, sumArray, exponent} from 'recursive';
+import {factorial1, gcd, range, sumArray, exponent, even_recursion, fibonacci} from 'recursive';
 
 document.querySelector("#recursive .container").innerHTML += "<br/>" + factorial1(0);
 document.querySelector("#recursive .container").innerHTML += "<br/>" + factorial1(6);
@@ -74,6 +74,11 @@ document.querySelector("#recursive .container").innerHTML += "<br/>" + sumArray(
 document.querySelector("#recursive .container").innerHTML += "<br/>" + exponent(2,4);
 document.querySelector("#recursive .container").innerHTML += "<br/>" + exponent(8,2);
 
+// even recursion
+document.querySelector("#recursive .container").innerHTML += "<br/>234: " + even_recursion(234);
+document.querySelector("#recursive .container").innerHTML += "<br/>-45: " + even_recursion(-45);
+
+document.querySelector("#recursive .container").innerHTML += "<br/>" + fibonacci(10);
 
 
 // https://www.w3resource.com/javascript-exercises/javascript-recursion-functions-exercises.php
