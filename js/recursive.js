@@ -37,3 +37,11 @@ export function sumArray(arr) {
 
 	return arr.shift() + sumArray(arr);
 }
+
+export function exponent(a,b) {
+	if (b === 0) {
+		return 1;
+	} else {
+		return a * exponent(a,b-1);
+	}
+}
