@@ -22,6 +22,11 @@ export function secondSmallest(arr, unique) {
 
 export function cleanWhitespaces(arr) {
 
+// tablica 3 elementy a spacja, b tab i c i 2 spacje
+// - usunąć białe znaki
+// - jest a, bc, d
+// - ma być a,b,c,d
+
 	var newArrConcat = [];
 	var newArr = arr.slice(0);
 	for (let i = 0; i < newArr.length; i++) {
@@ -29,11 +34,8 @@ export function cleanWhitespaces(arr) {
 		newArr[i] = newArr[i].split("");
 		newArrConcat = newArrConcat.concat(newArr[i]);
 	}
-	console.log(arr);
-	console.log(newArr);
-	console.log(newArrConcat);
+	// console.log(arr);
+	// console.log(newArr);
+	// console.log(newArrConcat);
 	return newArrConcat.join("-");
 }
-// tablica 3 elementy a spacja, b tab i c i 2 spacje
-// - usunąć białe znaki
-// - ??? a, bc, d
