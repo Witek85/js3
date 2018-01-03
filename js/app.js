@@ -86,7 +86,7 @@ import {secondSmallest, cleanWhitespaces} from 'arrays';
 // goldman sachs second smallest
 document.querySelector("#arrays .container").innerHTML += "<br/>" + secondSmallest([7,2,6,4,7,9,12,1,4]);
 document.querySelector("#arrays .container").innerHTML += "<br/>" + secondSmallest([1,1,7,2,6,4,7,9,12,1,4], true);
-document.querySelector("#arrays .container").innerHTML += "<br/>" + cleanWhitespaces(["a","b   "," c ", " d"]);
+document.querySelector("#arrays .container").innerHTML += "<br/>" + cleanWhitespaces(["a","b   c"," d ", " e"]);
 
 // to co było na 10clouds
 // to co było w credit suisse

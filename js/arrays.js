@@ -22,14 +22,18 @@ export function secondSmallest(arr, unique) {
 
 export function cleanWhitespaces(arr) {
 
+	var newArrConcat = [];
 	var newArr = arr.slice(0);
 	for (let i = 0; i < newArr.length; i++) {
 		newArr[i] = newArr[i].replace(/\s/g,'');
+		newArr[i] = newArr[i].split("");
+		newArrConcat = newArrConcat.concat(newArr[i]);
 	}
-	// console.log(arr);
-	// console.log(newArr);
-	return newArr.join("");
+	console.log(arr);
+	console.log(newArr);
+	console.log(newArrConcat);
+	return newArrConcat.join("-");
 }
 // tablica 3 elementy a spacja, b tab i c i 2 spacje
 // - usunąć białe znaki
-// - ???
+// - ??? a, bc, d
