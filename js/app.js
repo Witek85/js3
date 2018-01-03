@@ -80,6 +80,14 @@ document.querySelector("#recursive .container").innerHTML += "<br/>-45: " + even
 
 document.querySelector("#recursive .container").innerHTML += "<br/>" + fibonacci(10);
 
+// arrays
+import {secondSmallest} from 'arrays';
+
+// goldman sachs second smallest
+document.querySelector("#arrays .container").innerHTML += "<br/>" + secondSmallest();
+
+// to co było na 10clouds
+// to co było w credit suisse
 
 // https://www.w3resource.com/javascript-exercises/javascript-recursion-functions-exercises.php
 
