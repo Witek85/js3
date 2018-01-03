@@ -22,10 +22,13 @@ export function secondSmallest(arr, unique) {
 
 export function cleanWhitespaces(arr) {
 
-	for (let i = 0; i < arr.length; i++) {
-		arr[i] = arr[i].replace(/\s/g,'');
+	var newArr = arr.slice(0);
+	for (let i = 0; i < newArr.length; i++) {
+		newArr[i] = newArr[i].replace(/\s/g,'');
 	}
-	return arr.join("");
+	// console.log(arr);
+	// console.log(newArr);
+	return newArr.join("");
 }
 // tablica 3 elementy a spacja, b tab i c i 2 spacje
 // - usunąć białe znaki
