@@ -17,5 +17,16 @@ export function secondSmallest(arr, unique) {
 	}	else {
 		return arr[1];	
 	}
-	
+
 }
+
+export function cleanWhitespaces(arr) {
+
+	for (let i = 0; i < arr.length; i++) {
+		arr[i] = arr[i].replace(/\s/g,'');
+	}
+	return arr.join("");
+}
+// tablica 3 elementy a spacja, b tab i c i 2 spacje
+// - usunąć białe znaki
+// - ???

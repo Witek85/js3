@@ -81,11 +81,12 @@ document.querySelector("#recursive .container").innerHTML += "<br/>-45: " + even
 document.querySelector("#recursive .container").innerHTML += "<br/>" + fibonacci(10);
 
 // arrays
-import {secondSmallest} from 'arrays';
+import {secondSmallest, cleanWhitespaces} from 'arrays';
 
 // goldman sachs second smallest
 document.querySelector("#arrays .container").innerHTML += "<br/>" + secondSmallest([7,2,6,4,7,9,12,1,4]);
 document.querySelector("#arrays .container").innerHTML += "<br/>" + secondSmallest([1,1,7,2,6,4,7,9,12,1,4], true);
+document.querySelector("#arrays .container").innerHTML += "<br/>" + cleanWhitespaces(["a","b   "," c ", " d"]);
 
 // to co było na 10clouds
 // to co było w credit suisse
