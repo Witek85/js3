@@ -64,29 +64,42 @@ apple = 10c
 banana = 20c
 melon = 50c */
 
-let profitApple = 0.1;
-let profitBanana = 0.2;
-let profitLemon = 0.5;
+let profitApple = 10;
+let profitBanana = 20;
+let profitMelon = 50;
 
 let uniqueArrIds = [];
 let uniqueArr = [];
 for (let c = 0; c < arr.length; c++) {
 	if(uniqueArrIds.includes(arr[c].customer_id) ) {
-		// uniqueArr.push('a');	
 
-		// console.log(arr[c].customer_id);
-		// jak customer jest już w tablicy to trzeba dopisać do istniejącej
+		for (let d = 0; d < uniqueArr.length; d++) {
+			if (uniqueArr[d].customer_id === arr[c].customer_id) {
+
+				uniqueArr[d].orders += 1;
+
+		    uniqueArr[d].appleTotal += arr[c].apple;
+		    uniqueArr[d].bananaTotal += arr[c].banana;
+		    uniqueArr[d].melonTotal += arr[c].melon;
+
+				uniqueArr[d].appleProfit += (arr[c].apple * profitApple);
+				uniqueArr[d].bananaProfit += (arr[c].banana * profitBanana);
+				uniqueArr[d].melonProfit += (arr[c].melon * profitMelon);
+
+			}
+		}
 
 	} else {
 
 	let customer = {
   	customer_id: arr[c].customer_id,
+    orders: 1,
     appleTotal: arr[c].apple,
     bananaTotal: arr[c].banana,
     melonTotal: arr[c].melon,
     appleProfit: arr[c].apple * profitApple,
     bananaProfit: arr[c].banana * profitBanana,
-    melonProfit: arr[c].melon * profitLemon
+    melonProfit: arr[c].melon * profitMelon
   }
 		uniqueArr.push(customer);	
 		uniqueArrIds.push(arr[c].customer_id);
@@ -96,6 +109,6 @@ for (let c = 0; c < arr.length; c++) {
 
 console.log(uniqueArr);
 
-return ('works');
+return ('works in console log');
 
 }
