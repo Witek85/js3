@@ -39,3 +39,63 @@ export function cleanWhitespaces(arr) {
 	// console.log(newArrConcat);
 	return newArrConcat.join("-");
 }
+
+export function randomValues() {
+
+let arr = [];
+const aLimit = 1000;
+const rand = (param) => {return Math.floor((Math.random()*param)+1)};
+
+for (let b = 0; b < aLimit; b++) {
+
+	let customer = {
+  	customer_id: rand(100),
+    apple: rand(10),
+    banana: rand(10),
+    melon: rand(10)
+  }
+	arr.push(customer);
+}
+
+console.log(arr);
+
+/*profit per fruit:
+apple = 10c
+banana = 20c
+melon = 50c */
+
+let profitApple = 0.1;
+let profitBanana = 0.2;
+let profitLemon = 0.5;
+
+let uniqueArrIds = [];
+let uniqueArr = [];
+for (let c = 0; c < arr.length; c++) {
+	if(uniqueArrIds.includes(arr[c].customer_id) ) {
+		// uniqueArr.push('a');	
+
+		// console.log(arr[c].customer_id);
+		// jak customer jest już w tablicy to trzeba dopisać do istniejącej
+
+	} else {
+
+	let customer = {
+  	customer_id: arr[c].customer_id,
+    appleTotal: arr[c].apple,
+    bananaTotal: arr[c].banana,
+    melonTotal: arr[c].melon,
+    appleProfit: arr[c].apple * profitApple,
+    bananaProfit: arr[c].banana * profitBanana,
+    melonProfit: arr[c].melon * profitLemon
+  }
+		uniqueArr.push(customer);	
+		uniqueArrIds.push(arr[c].customer_id);
+	}
+	
+}
+
+console.log(uniqueArr);
+
+return ('works');
+
+}
